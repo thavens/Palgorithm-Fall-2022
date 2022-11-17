@@ -1,12 +1,13 @@
 import pygame, sys
 import pygame.locals as locals
+from ballbounce import Ball
 from main_menu import MainMenu
 
 SIZE = (640, 400)
 BG_COLOUR = (0, 0, 0)
 LINE_COLOUR = (255, 255, 255)
 
-game_modules = [MainMenu(SIZE)]
+game_modules = [MainMenu(SIZE), Ball(SIZE, damper=0.8)]
 current_module = 0
 
 def run_game():
@@ -18,7 +19,6 @@ def run_game():
     clock = pygame.time.Clock()
 
     while True:
-        time_passed = clock.tick(30)
         for event in pygame.event.get():
             if event.type == locals.QUIT:
                 exit_game()

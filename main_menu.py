@@ -25,3 +25,6 @@ class MainMenu:
     
     def event(self, event):
         self.play.check_event(event)
+    
+    def play(self):
+        print('asdf')
